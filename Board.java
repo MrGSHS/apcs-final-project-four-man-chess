@@ -1,0 +1,18 @@
+public class Board{
+    private Piece[][] board;
+    public Board(int numRows, int numCols){
+        board=new Piece[numRows][numCols];
+    }
+    public Piece getPiece(int row, int col){
+        return board[row][col];
+    }
+    public Piece[][] getBoard(){
+        return board;
+    }
+    public void setSquare(int row, int col, Piece p){
+        board[row][col]=p;
+    }
+    public void remove(int row, int col){
+        board[row][col]=null;
+    }
+}
