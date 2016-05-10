@@ -1,4 +1,5 @@
 public class Board{
+    
     private Piece[][] board;
     public Board(int numRows, int numCols){
         board=new Piece[numRows][numCols];
@@ -12,7 +13,9 @@ public class Board{
     public void setSquare(int row, int col, Piece p){
         board[row][col]=p;
     }
-    public void remove(int row, int col){
+    public Piece remove(int row, int col){
+        Piece p=board[row][col];
         board[row][col]=null;
+        return p;
     }
 }

@@ -8,7 +8,7 @@ public class Knight extends Piece{
     public boolean capture(){
         return false;
     }
-    public boolean move(Board board, int fromRow, int fromCol, int toRow, int toCol){
+    public boolean move(Board board, Piece p, int fromRow, int fromCol, int toRow, int toCol){
         return false;
     }
     public String toString(){

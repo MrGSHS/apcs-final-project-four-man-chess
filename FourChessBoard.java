@@ -1,5 +1,4 @@
 public class FourChessBoard extends Board{
-    //Piece[][] board=new Piece[14][14];
     PieceSet set=new PieceSet("white");
     Piece temp;
     public FourChessBoard(){
@@ -9,10 +8,7 @@ public class FourChessBoard extends Board{
                 temp=set.getPiece(x, y);
                 setSquare(x, y+3, set.getPiece(x, y));
                 setSquare(y+3, x, set.getPiece(x, y));
-                getBoard()[y+3][x].setColor("yellow");
-                
-                //setSquare(y+3, x+12, set.getPiece(x, y));
-                //getBoard()[y+3][x+12].setColor("blue"); 
+                getBoard()[y+3][x].setColor("yellow"); 
                 
                 if (x==0){
                     setSquare(y+3, 13, set.getPiece(x, y));

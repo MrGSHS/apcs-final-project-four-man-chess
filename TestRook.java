@@ -1,13 +1,11 @@
-public class TestBishop{
+public class TestRook{
     public static void main(String[] args){
         Board board=new FourChessBoard();
-        board.remove(1, 4);
-        Piece p=board.getPiece(0, 5);
-        System.out.println(p.move(board, p, 0, 5, 1, 4));
-        System.out.println(p.move(board, p, 0, 5, 1, 5));
-        System.out.println(p.move(board, p, 0, 5, 1, 5));
-        System.out.println(p.move(board, p, 0, 5, 1, 6));
-        System.out.println(p.move(board, p, 0, 5, 2, 7));
+        board.remove(1, 3);
+        Piece p=board.getPiece(0, 3);
+        System.out.println(p.move(board, p, 0, 3, 2, 3));
+        System.out.println(p.move(board, p, 0, 3, 0, 4));
+        System.out.println(p.move(board, p, 0, 3, 1, 5));
         
         if (p.move(board, p, 0, 5, 1, 4)){
             p.doMove(board, p, 0, 5, 1, 4);

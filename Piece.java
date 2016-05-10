@@ -5,7 +5,7 @@ public abstract class Piece{
     public Piece(String c){
         color=c;
     }
-    //public abstract boolean move(Board board, int fromRow, int fromCol, int toRow, int toCol);
+    public abstract boolean move(Board board, Piece p, int fromRow, int fromCol, int toRow, int toCol);
     public abstract boolean capture(/*Board board, int fromRow, int fromCol, 
       int toRow, int toCol*/);
     public void setColor(String c){
@@ -14,5 +14,9 @@ public abstract class Piece{
     public abstract String toString();
     public String getColor(){
         return color;
+    }
+    public void doMove(Board board, Piece p, int fromRow, int fromCol,
+    int toRow, int toCol){
+        
     }
 }
