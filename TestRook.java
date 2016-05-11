@@ -7,8 +7,8 @@ public class TestRook{
         System.out.println(p.move(board, p, 0, 3, 0, 4));
         System.out.println(p.move(board, p, 0, 3, 1, 5));
         
-        if (p.move(board, p, 0, 5, 1, 4)){
-            p.doMove(board, p, 0, 5, 1, 4);
+        if (p.move(board, p, 0, 3, 2, 3)){
+            p.doMove(board, p, 0, 3, 2, 3);
         }
         for (int x=0; x<board.getBoard().length; x++){
             for (int y=0; y<board.getBoard()[0].length; y++){

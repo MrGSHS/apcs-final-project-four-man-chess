@@ -17,6 +17,6 @@ public abstract class Piece{
     }
     public void doMove(Board board, Piece p, int fromRow, int fromCol,
     int toRow, int toCol){
-        
+        board.setSquare(toRow, toCol, board.remove(fromRow, fromCol));
     }
 }

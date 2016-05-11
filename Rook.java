@@ -2,14 +2,13 @@ public class Rook extends Piece{
     public Rook(String c){
         super(c);
     }
-    public String getColor(){
-        return getColor();
-    }
     public boolean capture(){
         return false;
     }
     public boolean move(Board board, Piece p, int fromRow, int fromCol, int toRow, int toCol){
         int total;
+        if ((toRow-fromRow!=0 || toCol-fromCol!=0) && board.getPiece(fromRow, fromCol)!=null &&  board.getPiece(fromRow, fromCol)!=p)
+            return false;
         if (toRow-fromRow!=0 && toCol-fromCol!=0)
             return false;
         
@@ -24,7 +23,6 @@ public class Rook extends Piece{
         }
         else 
             total=Math.abs(fromRow-toRow);
-            
             
         if (toRow-fromRow!=0){
             if (toRow-fromRow<0)
@@ -42,6 +40,6 @@ public class Rook extends Piece{
         
     }
     public String toString(){
-        return "Rook";
+        return "Rook  ";
     }
 }

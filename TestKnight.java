@@ -1,4 +1,4 @@
-public class TestBishop{
+public class TestKnight{
     public static void main(String[] args){
         Board board=new FourChessBoard();
         board.remove(1, 4);

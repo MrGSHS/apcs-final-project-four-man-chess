@@ -7,7 +7,7 @@ public class Bishop extends Piece{
     }
     public boolean move(Board board, Piece p, int fromRow, int fromCol,
     int toRow, int toCol){
-        if (toRow-fromRow!=0 && board.getPiece(fromRow, fromCol)!=p)
+        if (toRow-fromRow!=0 && board.getPiece(fromRow, fromCol)!=null &&  board.getPiece(fromRow, fromCol)!=p)
             return false;
         if (Math.abs(toRow-fromRow)!=Math.abs(toCol-fromCol) || fromRow==toRow 
         && p==board.getPiece(fromRow, fromCol))
@@ -18,7 +18,7 @@ public class Bishop extends Piece{
                 return false;
             return true;
         }
-        int total=Math.abs(fromRow-toRow);
+        
         boolean dirRow=(toRow-fromRow>0);
         boolean dirCol=(toCol-fromCol>0);
         if (dirRow && dirCol){
@@ -29,10 +29,6 @@ public class Bishop extends Piece{
         if (dirCol)
             return move(board, p, fromRow-1, fromCol+1, toRow, toCol);
         return move(board, p, fromRow-1, fromCol-1, toRow, toCol);
-    }
-    public void doMove(Board board, Piece p, int fromRow, int fromCol,
-    int toRow, int toCol){
-        board.setSquare(toRow, toCol, board.remove(fromRow, fromCol));
     }
     public String toString(){
         return "Bishop";
