@@ -7,6 +7,8 @@ public class Bishop extends Piece{
     }
     public boolean move(Board board, Piece p, int fromRow, int fromCol,
     int toRow, int toCol){
+        boolean a=super.move(board, p, fromRow, fromCol, toRow, toCol);
+        if (!a) return false;
         if (toRow-fromRow!=0 && board.getPiece(fromRow, fromCol)!=null &&  board.getPiece(fromRow, fromCol)!=p)
             return false;
         if (Math.abs(toRow-fromRow)!=Math.abs(toCol-fromCol) || fromRow==toRow 

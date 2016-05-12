@@ -18,4 +18,10 @@ public class Board{
         board[row][col]=null;
         return p;
     }
+    public int getRows(){
+        return board.length;
+    }
+    public int getCols(){
+        return board[0].length;
+    }
 }

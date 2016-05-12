@@ -3,13 +3,12 @@ public class TestBishop{
         Board board=new FourChessBoard();
         board.remove(1, 4);
         Piece p=board.getPiece(0, 5);
-        System.out.println(p.move(board, p, 0, 5, 1, 4));
-        System.out.println(p.move(board, p, 0, 5, 1, 5));
-        System.out.println(p.move(board, p, 0, 5, 1, 5));
-        System.out.println(p.move(board, p, 0, 5, 1, 6));
-        System.out.println(p.move(board, p, 0, 5, 2, 7));
-        System.out.println(p.move(board, p, 0, 5, 2, 3));
-        System.out.println(p.move(board, p, 0, 5, 2, 3));
+        System.out.println(p.move(board, p, 0, 5, 1, 4));//true
+        System.out.println(p.move(board, p, 0, 5, 1, 5));//false
+        System.out.println(p.move(board, p, 0, 5, 1, 6));//false
+        System.out.println(p.move(board, p, 0, 5, 2, 7));//false
+        System.out.println(p.move(board, p, 0, 5, 2, 3));//true
+        System.out.println(p.move(board, p, 0, 5, -1, 4));//false
         
         if (p.move(board, p, 0, 5, 1, 4)){
             p.doMove(board, p, 0, 5, 1, 4);

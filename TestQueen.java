@@ -12,6 +12,9 @@ public class TestQueen{
         System.out.println(p.move(board, p, 0, 6, 1, 6));//true
         System.out.println(p.move(board, p, 0, 6, 5, 6));//true
         System.out.println(p.move(board, p, 0, 6, 2, 8));//false
+        System.out.println(p.move(board, p, 0, 6, -1, 8));//false
+        System.out.println(p.move(board, p, 0, 6, 0, 14));//false
+        
         if (p.move(board, p, 0, 6, 5, 6)){
             p.doMove(board, p, 0, 6, 5, 6);
         }
