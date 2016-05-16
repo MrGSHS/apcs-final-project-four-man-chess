@@ -1,6 +1,6 @@
 import java.util.*;
 public class PieceSet{
-    Piece[][] set=new Piece[2][8];
+    private Piece[][] set=new Piece[2][8];
     public PieceSet(String c){
         set[0][0]=new Rook(c);
         set[0][1]=new Knight(c);

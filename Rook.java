@@ -15,7 +15,7 @@ public class Rook extends Piece{
         if (toRow-fromRow!=0 && toCol-fromCol!=0)
             return false;
         
-        if (fromRow==toRow){
+        if (fromRow==toRow && fromCol==toCol){
             if (board.getPiece(fromRow, fromCol)!=null 
             && board.getPiece(toRow, toCol).getColor()==p.getColor())
                 return false;

@@ -7,7 +7,7 @@ public class TestBoard{
                 if (sets[x][y]==null) System.out.print("       ");
                 else System.out.print(sets[x][y].toString()+"  ");
             }
-            System.out.println();
+            System.out.println("\n\n");
         }
         board.setSquare(1, 4, null);
         //System.out.println(board.getPiece(0, 5).move(board, this, 0, 5, 1, 4));

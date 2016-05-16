@@ -3,10 +3,15 @@ public class TestRook{
         Board board=new FourChessBoard();
         board.remove(1, 3);
         Piece p=board.getPiece(0, 3);
-        System.out.println(p.move(board, p, 0, 3, 2, 3));
-        System.out.println(p.move(board, p, 0, 3, 0, 4));
-        System.out.println(p.move(board, p, 0, 3, 1, 5));
+        System.out.println(p.move(board, p, 0, 3, 2, 3));//true
+        System.out.println(p.move(board, p, 0, 3, 0, 4));//false
+        System.out.println(p.move(board, p, 0, 3, 1, 5));//false
+         System.out.println(p.move(board, p, 0, 3, 0, 2));//true
+         
+        p=board.getPiece(3, 0);
+        System.out.println(p.move(board, p, 3, 0, 2, 0));//true
         
+        p=board.getPiece(0, 3);
         if (p.move(board, p, 0, 3, 2, 3)){
             p.doMove(board, p, 0, 3, 2, 3);
         }

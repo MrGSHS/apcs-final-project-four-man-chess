@@ -1,34 +1,33 @@
 public class FourChessBoard extends Board{
-    PieceSet set=new PieceSet("white");
-    Piece temp;
+    private PieceSet set1=new PieceSet("white");
+    private PieceSet set2=new PieceSet("yellow");
+    private PieceSet set3=new PieceSet("black");
+    private PieceSet set4=new PieceSet("blue");  
     public FourChessBoard(){
-        super(14, 14);
+        super(14, 14, false);
+        Piece pa;
+        Piece pb;
+        Piece pc;
+        Piece pd;
         for (int x=0; x<2; x++){
             for (int y=0; y<8; y++){
-                temp=set.getPiece(x, y);
-                setSquare(x, y+3, set.getPiece(x, y));
-                setSquare(y+3, x, set.getPiece(x, y));
-                getBoard()[y+3][x].setColor("yellow"); 
+                pa=set1.getPiece(x, y);
+                pb=set2.getPiece(x, y);
+                pc=set3.getPiece(x, y);
+                pd=set4.getPiece(x, y);
+                
+                super.setSquare(x, y+3, pa);
+                super.setSquare(y+3, x, pb);
                 
                 if (x==0){
-                    setSquare(y+3, 13, set.getPiece(x, y));
-                    getBoard()[y+3][13].setColor("blue"); 
-                
-                    setSquare(13, y+3, set.getPiece(x, y));
-                    getBoard()[13][y+3].setColor("black");
+                    setSquare(y+3, 13, pc);
+                    setSquare(13, y+3, pd);
                 }
                 else { 
-                    setSquare(y+3, 12, set.getPiece(x, y));
-                    getBoard()[y+3][12].setColor("blue"); 
-                
-                    setSquare(12, y+3, set.getPiece(x, y));
-                    getBoard()[12][y+3].setColor("black");
+                    setSquare(y+3, 12, pc); 
+                    setSquare(12, y+3, pd);
                 }
             }
         }
     }
-    Player white=new Player("1", "white");
-    Player yellow=new Player("2", "yellow");
-    Player black=new Player("3", "black");
-    Player blue=new Player("4", "blue");
 }
