@@ -20,12 +20,12 @@ public class FourChessBoard extends Board{
                 super.setSquare(y+3, x, pb);
                 
                 if (x==0){
-                    setSquare(y+3, 13, pc);
-                    setSquare(13, y+3, pd);
+                    setSquare(13, y+3, pc);
+                    setSquare(y+3, 13, pd);
                 }
                 else { 
-                    setSquare(y+3, 12, pc); 
-                    setSquare(12, y+3, pd);
+                    setSquare(12, y+3, pc);
+                    setSquare(y+3, 12, pd);
                 }
             }
         }

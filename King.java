@@ -2,9 +2,6 @@ public class King extends Piece{
     public King(String c){
         super(c);
     }
-    public boolean capture(){
-        return false;
-    }
     public boolean move(Board board, Piece p, int fromRow, int fromCol, int toRow, int toCol){
         boolean a=super.move(board, p, fromRow, fromCol, toRow, toCol);
         if (!a) return false;

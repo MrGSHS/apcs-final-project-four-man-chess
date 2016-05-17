@@ -46,18 +46,33 @@ public class Board{
     }
     
     
-    
+    /*
     public Board rotate(Board board, int numClockwise){
         Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
-        
+        Board temp=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
         int rotations=0;
         //Piece temp;
+        
+        for (int x=0; x<board.getRows(); x++){
+            for (int y=0; y<board.getCols(); y++){
+                b.setSquare(x, y, board.getPiece(x, y));
+            }
+        }        
+        
         while(rotations<numClockwise){
+            //temp=new FourChessBoard();
+            
+            for (int x=0; x<temp.getRows(); x++){
+                for (int y=0; y<temp.getCols(); y++){
+                    temp.setSquare(x, y, b.getPiece(x, y));
+                }
+            }   
+            
             for (int x=0; x<b.getRows(); x++){
                 for (int y=0; y<b.getCols(); y++){
-                    b.setSquare(x, y, board.getPiece(board.getCols()-1-y, x));
+                    b.setSquare(x, y, temp.getPiece(board.getCols()-1-y, x));
                 }
-            }
+            }         
             rotations++;
         }
         return b;
@@ -76,6 +91,6 @@ public class Board{
         ret[1]=col;
         return ret;
     }    
-    
+    */
     
 }

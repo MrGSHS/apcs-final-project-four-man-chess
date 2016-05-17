@@ -15,18 +15,18 @@ public class Player{
         players.add(playerNumber, this);
         playerNumber++;
     }
-    public void add(int fromRow, int fromCol, int toRow, int toCol){
+    public void addMove(int fromRow, int fromCol, int toRow, int toCol){
         int[] temp=new int[4];
-        for (int x=0; x<4; x++){
-            moves.get(x)[0]=fromRow;
-            moves.get(x)[1]=fromCol;
-            moves.get(x)[2]=toRow;
-            moves.get(x)[3]=toCol;
-        }
+        temp[0]=fromRow;
+        temp[1]=fromCol;
+        temp[2]=toRow;
+        temp[3]=toCol;
+        moves.add(temp);
     }
+    
     public int[] getMove(int ind){
         int[] temp=new int[4];
-        if (ind<0 || ind>moves.size())
+        if (ind<0 || ind>=moves.size())
             return null;
         for (int x=0; x<4; x++){
             temp[x]=moves.get(ind)[x];
@@ -68,12 +68,20 @@ public class Player{
         }
         return null;
     }
+    
     public static Player getPreviousPlayer(String color){
         int num=getPlayer(color).playerNumber;
         if (num==0)
             return players.get(players.size()-1);
-        return players.get(num);
+        return players.get(num-1);
     }
+    public static Player getPreviousPlayer(Player player){
+        int num=player.playerNumber;
+        if (num==0)
+            return players.get(players.size()-1);
+        return players.get(num-1);
+    }
+    
     public static Player getPreviousPlayer(int number){
         int num=getPlayer(number).playerNumber;
         if (num==0)
@@ -87,5 +95,13 @@ public class Player{
                 return x;
         }
         return -1;
+    }
+    
+    public String toString(){
+        return "Player "+playerNum;
+    }
+    
+    public boolean isCheckmate(Board b){
+        return false;
     }
 }

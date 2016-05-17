@@ -6,10 +6,10 @@ public class TestRook{
         System.out.println(p.move(board, p, 0, 3, 2, 3));//true
         System.out.println(p.move(board, p, 0, 3, 0, 4));//false
         System.out.println(p.move(board, p, 0, 3, 1, 5));//false
-         System.out.println(p.move(board, p, 0, 3, 0, 2));//true
+        System.out.println(p.move(board, p, 0, 3, 0, 2));//false
          
         p=board.getPiece(3, 0);
-        System.out.println(p.move(board, p, 3, 0, 2, 0));//true
+        System.out.println(p.move(board, p, 3, 0, 2, 0));//false
         
         p=board.getPiece(0, 3);
         if (p.move(board, p, 0, 3, 2, 3)){
