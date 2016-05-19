@@ -13,10 +13,10 @@ public class Board{
             p2=new Player("2", "black", -1, 0);
         }
         else{
-            p1=new Player("1", "white", 1, 0);
-            p2=new Player("2", "yellow", 0, 1);
-            p3=new Player("3", "black", -1, 0);
-            p4=new Player("4", "blue", 0, -1);            
+            //p1=new Player("1", "white", 1, 0);
+            //p2=new Player("2", "yellow", 0, 1);
+            //p3=new Player("3", "black", -1, 0);
+            //p4=new Player("4", "blue", 0, -1);            
         }
         board=new Piece[numRows][numCols];
     }
@@ -28,6 +28,21 @@ public class Board{
         return board;
     }
     public void setSquare(int row, int col, Piece p){
+        Piece piece =getPiece(row, col);
+        Player player;
+        
+        if (piece!=null){
+            player=Player.getPlayer(piece.getColor());            
+            //player.remove(piece);
+        }
+        
+        if (p!=null && p.toString().equals("King  ")){
+            Player.getPlayer(p.getColor()).setKingLoc(row, col);
+            
+            //if (p!=null)
+            //    Player.getPlayer(p.getColor()).addPiece(row, col, getPiece(row, col));
+        }
+        
         board[row][col]=p;
     }
     public Piece remove(int row, int col){

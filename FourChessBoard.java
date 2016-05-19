@@ -5,6 +5,11 @@ public class FourChessBoard extends Board{
     private PieceSet set4=new PieceSet("blue");  
     public FourChessBoard(){
         super(14, 14, false);
+        Player pA=new Player("p1", "white", 1, 0);
+        Player pB=new Player("p2", "yellow", 0, 1);
+        Player pC=new Player("p3", "black", -1, 0);
+        Player pD=new Player("p4", "blue", 0, -1);
+        
         Piece pa;
         Piece pb;
         Piece pc;
@@ -17,17 +22,34 @@ public class FourChessBoard extends Board{
                 pd=set4.getPiece(x, y);
                 
                 super.setSquare(x, y+3, pa);
+                //pA.addPiece(x, y+3, pa);
                 super.setSquare(y+3, x, pb);
+                //pB.addPiece(y+3, x, pb);
                 
                 if (x==0){
-                    setSquare(13, y+3, pc);
-                    setSquare(y+3, 13, pd);
+                    super.setSquare(13, y+3, pc);
+                    //pC.addPiece(13, y+3, pc);
+                    super.setSquare(y+3, 13, pd);
+                    //pD.addPiece(y+3, 13, pd);
                 }
                 else { 
-                    setSquare(12, y+3, pc);
-                    setSquare(y+3, 12, pd);
+                    super.setSquare(12, y+3, pc);
+                    //pC.addPiece(12, y+3, pc);
+                    super.setSquare(y+3, 12, pd);
+                    //pD.addPiece(y+3, 12, pd);
                 }
             }
         }
+        Player.getPlayer("white").setKingRow(0);
+        Player.getPlayer("white").setKingCol(7);
+        
+        Player.getPlayer("yellow").setKingRow(7);
+        Player.getPlayer("yellow").setKingRow(0);
+        
+        Player.getPlayer("black").setKingRow(13);
+        Player.getPlayer("black").setKingRow(7);
+        
+        Player.getPlayer("blue").setKingRow(7);
+        Player.getPlayer("blue").setKingRow(13);
     }
 }

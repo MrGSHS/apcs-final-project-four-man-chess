@@ -39,5 +39,11 @@ public class TestKing{
             }
             System.out.println();
         }
+        System.out.println(Player.getPlayer("white").getKingRow());
+        System.out.println(Player.getPlayer("white").getKingCol());
+        
+        Piece queen=new Queen("black");
+        board.setSquare(2, 5, queen);
+        System.out.println(Player.getPlayer("black").isInCheck(board));
     }
 }

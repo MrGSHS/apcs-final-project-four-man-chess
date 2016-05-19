@@ -1,3 +1,4 @@
+import java.util.*;
 public abstract class Piece{
     private String color;
     private int row;
@@ -23,6 +24,7 @@ public abstract class Piece{
     int toRow, int toCol, Piece newPiece){
         //public abstract boolean capture(/*Board board, int fromRow, int fromCol, 
         //  int toRow, int toCol*/);
+        
     }
     public void setColor(String c){
         color= c;
@@ -38,9 +40,34 @@ public abstract class Piece{
     }
     */
     
+    public Board doMove(Board board, Piece p, int fromRow, int fromCol,
+    int toRow, int toCol, int a){
+        Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
+        for (int x=0; x<board.getRows(); x++){
+            for (int y=0; y<board.getCols(); y++){
+                b.setSquare(x, y, board.getPiece(x, y));
+            }
+        }
+        Player.getPlayer(p.getColor()).addMove(fromRow, fromCol, toRow, toCol);
+        b.setSquare(toRow, toCol, b.remove(fromRow, fromCol));
+        if (p.toString().equals("King  ")){
+            Player player=Player.getPlayer(p.getColor());
+            player.setKingRow(toRow);
+            player.setKingCol(toCol);
+        }
+        return b;
+    }
+    
     public void doMove(Board board, Piece p, int fromRow, int fromCol,
     int toRow, int toCol){
         Player.getPlayer(p.getColor()).addMove(fromRow, fromCol, toRow, toCol);
         board.setSquare(toRow, toCol, board.remove(fromRow, fromCol));
-    }
+        if (p.toString().equals("King  ")){
+            Player player=Player.getPlayer(p.getColor());
+            player.setKingRow(toRow);
+            player.setKingCol(toCol);
+        }
+    }    
+    
+    //public abstract List<int>/*toRow, toCol*/ getMoves(Board board, Piece piece);
 }
