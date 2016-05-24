@@ -9,8 +9,20 @@ public class TestKing{
         board.remove(3, 1);
         
         Piece p=board.getPiece(0, 7);
+        Player p1=Player.getPlayer("white");
+        //System.out.println(p1.getKingRow()+"  "+p1.getKingCol());
+        
+        //rotates once b/c kingRow, kingCol
         System.out.println(p.move(board, p, 0, 7, 1, 7));//true
+        
+        //doesn't rotate b/c not kingRow, kingCol anymore
+        
+        //System.out.println(p1.getKingRow()+"  "+p1.getKingCol());
+        
         System.out.println(p.move(board, p, 0, 7, 1, 6));//true
+        
+        //System.out.println(p1.getKingRow()+"  "+p1.getKingCol());
+        
         System.out.println(p.move(board, p, 0, 7, 1, 8));//true
         System.out.println(p.move(board, p, 0, 7, -1, 6));//false
         System.out.println(p.move(board, p, 0, 7, 2, 7));//false
@@ -39,11 +51,11 @@ public class TestKing{
             }
             System.out.println();
         }
-        System.out.println(Player.getPlayer("white").getKingRow());
-        System.out.println(Player.getPlayer("white").getKingCol());
+        //System.out.println(Player.getPlayer("white").getKingRow());
+        //System.out.println(Player.getPlayer("white").getKingCol());
         
         Piece queen=new Queen("black");
         board.setSquare(2, 5, queen);
-        System.out.println(Player.getPlayer("black").isInCheck(board));
+        //System.out.println(Player.getPlayer("black").isInCheck(board));
     }
 }

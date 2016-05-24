@@ -1,11 +1,14 @@
 public class TestRotate{
     public static void main(String[] args){
-        Board b=new FourChessBoard();
-        Piece piece=b.getPiece(12, 4);
-        System.out.println(piece.getColor());
-        System.out.println(Player.getPlayer(piece.getColor()).getDirRow());
+        //Board b=new FourChessBoard();
+        //Piece piece=b.getPiece(12, 4);
+        //System.out.println(piece.getColor());
+        //System.out.println(Player.getPlayer(piece.getColor()).getDirRow());
         
-        /*
+        //int[] a=b.rowCol(b, 6, 13, 1);
+        //System.out.println(a[0]+"\n"+a[1]);
+        
+        
         Board board=new FourChessBoard();
         board.remove(1, 4);
         //Piece p=board.getPiece(1, 5);
@@ -39,15 +42,15 @@ public class TestRotate{
             System.out.println();
         }
         
+        //arr=board.rowCol(board, 1, 4, 2);
         System.out.println(arr[0]+"\n"+arr[1]);//4, 12
-        /*
         
         int[] arr2=board.rowCol(board, 1, 4, 2);
         System.out.println(arr2[0]+"\n"+arr2[1]);//12, 9
         
         int[] arr3 =board.rowCol(board, 1, 4, 3);
         System.out.println(arr3[0]+"\n"+arr3[1]);//9, 1'
-        */
+        
        
     }
 }

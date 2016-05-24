@@ -28,23 +28,27 @@ public class Board{
         return board;
     }
     public void setSquare(int row, int col, Piece p){
-        Piece piece =getPiece(row, col);
-        Player player;
+        //Piece piece =getPiece(row, col);
+        //Player player;
         
-        if (piece!=null){
-            player=Player.getPlayer(piece.getColor());            
+        // if (piece!=null){
+        //    player=Player.getPlayer(piece.getColor());            
             //player.remove(piece);
-        }
+       // }
         
-        if (p!=null && p.toString().equals("King  ")){
-            Player.getPlayer(p.getColor()).setKingLoc(row, col);
+        //if (p!=null && p.toString().equals("King  ")){
+            //Player.getPlayer(p.getColor()).setKingLoc(row, col);
             
             //if (p!=null)
             //    Player.getPlayer(p.getColor()).addPiece(row, col, getPiece(row, col));
-        }
+        //}
         
         board[row][col]=p;
     }
+    public void setSquare(Board b, int row, int col, Piece p){
+        b.setSquare(row, col, p);
+    }
+    
     public Piece remove(int row, int col){
         Piece p=board[row][col];
         board[row][col]=null;
@@ -61,7 +65,7 @@ public class Board{
     }
     
     
-    /*
+    
     public Board rotate(Board board, int numClockwise){
         Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
         Board temp=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
@@ -105,7 +109,8 @@ public class Board{
         ret[0]=row;
         ret[1]=col;
         return ret;
-    }    
-    */
+    }  
+    
+    
     
 }

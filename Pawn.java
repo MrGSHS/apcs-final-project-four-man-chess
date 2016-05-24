@@ -12,8 +12,20 @@ public class Pawn extends Piece{
 
     public boolean move(Board board, Piece p, int fromRow, int fromCol, int toRow, int toCol)
     {
-        boolean a=super.move(board, p, fromRow, fromCol, toRow, toCol);
-        if (!a) return false;
+
+        //Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());        
+        int[] a=new int[2];
+        Player p1;
+        /*List<int[]> list=new ArrayList<int[]>();
+        for (int x=0; x<board.getRows(); x++){
+            p1=Player.getPlayer(x);
+            a[0]=p1.getKingRow();
+            a[1]=p1.getKingCol();
+            list.add(a);
+        }
+        */
+        boolean c=super.move(board, p, fromRow, fromCol, toRow, toCol);
+        if (!c) return false;
 
         Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
         int[] newVal=new int[2];
@@ -23,67 +35,115 @@ public class Pawn extends Piece{
         int dirCol=player.getDirCol(); 
         int moved=player.hasMovedTo(fromRow, fromCol);
 
+        int fromTheRow, fromTheCol, toTheRow, toTheCol;
+        //above's the prob  
         
+        /*for (int x=0; x<b.getRows(); x++){
+            p1=Player.getPlayer(x);
+            int[] z=list.get(x);
+            p1.setKingLoc(a[0], a[1]);
+        }
+        */
+        b=board;
+        fromTheRow=fromRow;
+        fromTheCol=fromCol;
+        toTheRow=toRow;
+        toTheCol=toCol;       
+       
         if (dirRow<0){
-            b=board;
+            Piece piece=b.getPiece(fromTheRow-1, toTheCol);
+            Piece temp=b.getPiece(toTheRow, toTheCol);
+            if (moved<0 && toTheCol-fromTheCol==0 && toTheRow-fromTheRow==-2 && piece==null
+            && temp==null
+            || toTheRow-fromTheRow==-1 && toTheCol-fromTheCol==0 && piece==null
+           
+            || toRow-fromTheRow==-1 && Math.abs(toCol-fromCol)==1 && temp!=null
+            && !temp.getColor().equals(p.getColor())){     
+                return true;
+            }
         }
         else{
             if (dirRow>0){
-                    b=rotate(board, 2);
-                    newVal=rowCol(board, fromRow, fromCol, 2);
-                    newValues=rowCol(board, toRow, toCol, 2);        
+                Piece piece=b.getPiece(fromRow+1, toCol);
+                Piece temp=b.getPiece(toRow, toCol);
+                if (moved<0 && toCol-fromCol==0 && toRow-fromRow==2 && piece==null
+                && temp==null
+                || toRow-fromRow==1 && toCol-fromCol==0 && piece==null
+               
+                || toRow-fromRow==1 && Math.abs(toCol-fromCol)==1 && temp!=null
+                && !temp.getColor().equals(p.getColor())){     
+                    return true;
+                }    
             }
             else if (dirCol>0){
-                b=rotate(board, 3);
-                newVal=rowCol(board, fromRow, fromCol, 3);
-                newValues=rowCol(board, toRow, toCol, 3);
+                Piece piece=b.getPiece(toRow, fromCol+1);
+                Piece temp=b.getPiece(toRow, toCol);
+                if (moved<0 && toCol-fromCol==2 && toRow-fromRow==0 && piece==null
+                && temp==null
+                || toRow-fromRow==0 && toCol-fromCol==1 && piece==null
+               
+                || toCol-fromCol==1 && Math.abs(toRow-fromRow)==1 && temp!=null
+                && !temp.getColor().equals(p.getColor())){     
+                    return true;
+                }       
             }
-            else if (dirCol<0){ 
-                b=rotate(board, 3);
-                newVal=rowCol(board, fromRow, fromCol, 1);
-                newValues=rowCol(board, toRow, toCol, 1);
+            else if (dirCol<0){
+                Piece piece=b.getPiece(toRow, fromCol-1);
+                Piece temp=b.getPiece(toRow, toCol);
+                if (moved<0 && toCol-fromCol==-2 && toRow-fromRow==0 && piece==null
+                && temp==null
+                || toRow-fromRow==0 && toCol-fromCol==-1 && piece==null
+               
+                || toCol-fromCol==-1 && Math.abs(toRow-fromRow)==1 && temp!=null
+                && !temp.getColor().equals(p.getColor())){     
+                    return true;
+                }     
             }              
-            fromRow=newVal[0];
-            fromCol=newVal[1];
-            toRow=newValues[0];
-            toCol=newValues[1]; 
+            fromTheRow=newVal[0];
+            fromTheCol=newVal[1];
+            toTheRow=newValues[0];
+            toTheCol=newValues[1]; 
         }
-       
-        Piece piece=b.getPiece(fromRow-1, toCol);
-        Piece temp=b.getPiece(toRow, toCol);
-        if (moved<0 && toCol-fromCol==0 && toRow-fromRow==-2 && piece==null
+        
+        /*
+        Piece piece=b.getPiece(fromTheRow-1, toTheCol);
+        Piece temp=b.getPiece(toTheRow, toTheCol);
+        if (moved<0 && toTheCol-fromTheCol==0 && toTheRow-fromTheRow==-2 && piece==null
         && temp==null
-        || toRow-fromRow==-1 && toCol-fromCol==0 && piece==null
+        || toTheRow-fromTheRow==-1 && toTheCol-fromTheCol==0 && piece==null
        
-        || toRow-fromRow==-1 && Math.abs(toCol-fromCol)==1 && temp!=null
-        && !temp.getColor().equals(p.getColor()))
+        || toRow-fromTheRow==-1 && Math.abs(toCol-fromCol)==1 && temp!=null
+        && !temp.getColor().equals(p.getColor())){     
             return true;
-
-            
+        }
+        */
+        
         //en pessan    
+        /*
         Player thePlayer=null;
         if (temp!=null)
             thePlayer=Player.getPlayer(temp.getColor());
 
         
-        if (toRow-fromRow==-1 && Math.abs(toCol-fromCol)==1 && thePlayer!=null 
-        /*&& temp.toString().equals("Pawn  ")*/
+        if (toRow-fromTheRow==-1 && Math.abs(toCol-fromCol)==1 && thePlayer!=null 
+        /*&& temp.toString().equals("Pawn  ")
         && Player.getPreviousPlayer(thePlayer).
         getMove(thePlayer.getLength()-1)==newValues)
         {
             return true;
         }
-
+        */
         
         return false;
     }
-
+    
+    /*
     private Board rotate(Board board, int numClockwise){
         Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
         Board temp=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
         int rotations=0;
         //Piece temp;
-
+        
         for (int x=0; x<board.getRows(); x++){
             for (int y=0; y<board.getCols(); y++){
                 b.setSquare(x, y, board.getPiece(x, y));
@@ -106,6 +166,7 @@ public class Pawn extends Piece{
             }         
             rotations++;
         }
+        
         return b;
     }
 
@@ -122,7 +183,8 @@ public class Pawn extends Piece{
         ret[1]=col;
         return ret;
     }    
-
+    */
+    
     public void doMove(Board board, Piece p, int fromRow, int fromCol,
     int toRow, int toCol){
         
@@ -149,6 +211,21 @@ public class Pawn extends Piece{
         
         else
             super.doMove(board, p, fromRow, fromCol, toRow, toCol);
+    }
+    
+    public boolean promote(Board board, Piece p, int fromRow, int fromCol,
+    int toRow, int toCol){
+        if ((p.move(board, p, fromRow, fromCol, toRow, toCol))
+        && (toRow==0 || toRow==board.getRows()-1 || toCol==0
+        || toCol==board.getCols()-1)){
+            return true;
+            //board.setSquare(fromRow, fromCol, null);
+            //board.setSquare(toRow, toCol, newPiece);
+            //Player.getPlayer(p.getColor()).addMove(fromRow, fromCol, toRow, toCol);
+        }
+        
+        else
+            return false;
     }
     
     public String toString(){

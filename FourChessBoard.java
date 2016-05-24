@@ -40,16 +40,17 @@ public class FourChessBoard extends Board{
                 }
             }
         }
-        Player.getPlayer("white").setKingRow(0);
+        /*Player.getPlayer("white").setKingRow(0);
         Player.getPlayer("white").setKingCol(7);
         
         Player.getPlayer("yellow").setKingRow(7);
-        Player.getPlayer("yellow").setKingRow(0);
+        Player.getPlayer("yellow").setKingCol(0);
         
         Player.getPlayer("black").setKingRow(13);
-        Player.getPlayer("black").setKingRow(7);
+        Player.getPlayer("black").setKingCol(7);
         
         Player.getPlayer("blue").setKingRow(7);
-        Player.getPlayer("blue").setKingRow(13);
+        Player.getPlayer("blue").setKingCol(13);
+        */
     }
 }
