@@ -1,4 +1,8 @@
 import java.util.*;
+/**
+ * abstract class that can be any of the chess pieces so the board can hold different 
+ * pieces
+ */
 public abstract class Piece{
     private String color;
     private int row;

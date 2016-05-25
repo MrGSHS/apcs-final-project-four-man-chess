@@ -1,3 +1,6 @@
+/**
+ * creates an empty board to hold pieces
+ */
 public class Board{
     private int numRows;
     private int numCols;

@@ -1,3 +1,6 @@
+/**
+ * creates a queen piece that can move side to side, up and down, and diagonally
+ */
 public class Queen extends Piece{
     public Queen(String c){
         super(c);

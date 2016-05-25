@@ -1,4 +1,9 @@
 import java.util.*;
+
+/**
+ * creates a pawn piece that moves in a constant direction across the board, 
+ * where it can promote into a queen
+ */
 public class Pawn extends Piece{
     int dirRow;
     int dirCol;

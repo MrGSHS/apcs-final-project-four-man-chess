@@ -1,4 +1,7 @@
 import java.util.*;
+/**
+ * contains a complete set of pieces used in order at the start of a game;
+ */
 public class PieceSet{
     private Piece[][] set=new Piece[2][8];
     public PieceSet(String c){

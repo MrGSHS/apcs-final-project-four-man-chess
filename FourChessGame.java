@@ -1,4 +1,8 @@
 import java.util.*;
+/**
+ * non-GUI game, runs the four man chess game played according to the rules until
+ * there is one player remaining, the winner
+ */
 public class FourChessGame{
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);

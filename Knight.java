@@ -1,3 +1,7 @@
+/**
+ * creates a minor piece that can move 2 squares in a direction and one square in a
+ * different direction
+ */
 public class Knight extends Piece{
     public Knight(String color){
         super(color);

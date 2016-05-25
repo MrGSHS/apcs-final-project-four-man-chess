@@ -1,3 +1,6 @@
+/**
+ * creates a chess 14 by 14 Chess board with a set of pieces for each four players
+ */
 public class FourChessBoard extends Board{
     private PieceSet set1=new PieceSet("white");
     private PieceSet set2=new PieceSet("yellow");

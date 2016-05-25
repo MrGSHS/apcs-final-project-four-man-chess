@@ -1,4 +1,8 @@
 import java.util.*;
+/**
+ * creates the player that uses the pieces on the board and removes itself
+ * if the player loses
+ */
 public class Player{
     //private int kingRow, kingCol;
     private int dirRow, dirCol;

@@ -1,3 +1,7 @@
+/**
+ * creates a king piece that can move one square in any direction but cannot be
+ * put in a place where it can be captured.
+ */
 public class King extends Piece{
     public King(String c){
         super(c);

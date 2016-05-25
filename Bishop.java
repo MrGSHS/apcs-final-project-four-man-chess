@@ -1,3 +1,6 @@
+/**
+ * creates a bishop, a piece that moves diagonally across a board
+ */
 public class Bishop extends Piece{
     public Bishop(String c){
         super(c);
