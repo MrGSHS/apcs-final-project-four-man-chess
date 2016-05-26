@@ -1,3 +1,6 @@
+/**
+ * Tests if the pawn works correctly
+ */
 public class TestPawn{
     public static void main(String[] args){
         Board board=new FourChessBoard();
@@ -8,7 +11,7 @@ public class TestPawn{
         Player p1=Player.getPlayer("white");
         Player p2=Player.getPlayer("black");        
         //System.out.println(p1.getKingRow()+"\n"+p1.getKingCol());
-        /*
+        
         Piece p=board.getPiece(1, 4);
        
         
@@ -38,7 +41,7 @@ public class TestPawn{
         
         board.setSquare(2, 6, new Pawn("blue"));
         p=board.getPiece(1, 5);
-        System.out.println(p.move(board, p, 1, 5, 2, 6));//true********************
+        System.out.println(p.move(board, p, 1, 5, 2, 6));//true
         System.out.println(p.move(board, p, 1, 5, 2, 4));//false
         
         board.setSquare(2, 6, new Pawn("white"));
@@ -69,7 +72,7 @@ public class TestPawn{
         p.doMove(board, p, 1, 4, 0, 3);        
         
         
-       */
+       /*
        
         board.setSquare(11, 8, new Pawn("blue"));
         Piece p=board.getPiece(11, 8);
@@ -85,6 +88,6 @@ public class TestPawn{
             }
             System.out.println();
         }
-        
+        */
     }
 }

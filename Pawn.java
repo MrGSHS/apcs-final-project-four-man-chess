@@ -1,8 +1,10 @@
 import java.util.*;
 
 /**
- * creates a pawn piece that moves in a constant direction across the board, 
- * where it can promote into a queen
+ * creates a pawn piece that moves in a constant direction across the board
+ * (it can move one or two squares forward on the first turn and one square forward
+ * after that).  It can also capture diagonally.  If it reaches the other end 
+ * of the board, it promotes to a queen.
  */
 public class Pawn extends Piece{
     int dirRow;
@@ -218,6 +220,7 @@ public class Pawn extends Piece{
             super.doMove(board, p, fromRow, fromCol, toRow, toCol);
     }
     
+    /*
     public boolean promote(Board board, Piece p, int fromRow, int fromCol,
     int toRow, int toCol){
         if ((p.move(board, p, fromRow, fromCol, toRow, toCol))
@@ -232,6 +235,7 @@ public class Pawn extends Piece{
         else
             return false;
     }
+    */
     
     public String toString(){
         return "Pawn  ";

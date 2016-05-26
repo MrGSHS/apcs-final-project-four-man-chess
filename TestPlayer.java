@@ -1,4 +1,7 @@
-public class TestCheckmate{
+/**
+ * Tests if player works
+ */
+public class TestPlayer{
     public static void main(String[] args){
         
         /*
@@ -22,7 +25,9 @@ public class TestCheckmate{
         Player p1=Player.getPlayer("white");
         Player p2=Player.getPlayer("black");
         
-        System.out.println(p1.isCheckmate(b)+"\n"+p2.isCheckmate(b));//false \n true
+        System.out.println(Player.getNextPlayer(p1);//p2 
+        System.out.println(p1.hasMovedTo(10, 10);//false;
+        System.out.println(p1.isCheckmate(b)+"\n"+p2.isCheckmate(b));//false \n(false)
         
         
         for (int x=0; x<b.getRows(); x++){
@@ -48,8 +53,18 @@ public class TestCheckmate{
         board.setSquare(12, 9, new Knight("black"));
         board.setSquare(13, 9, new Bishop("black"));
         
+        System.out.println(Player.getNextPlayer(p).getColor());//yellow
+        System.out.println(p.hasMovedTo(1, 3));//-1
+        Piece piece=board.getPiece(1,3);
+        if (piece.move(board, piece, 1, 3, 3, 3)){
+            piece.doMove(board, piece, 1, 3, 3, 3);
+        }
+        System.out.println(p.hasMovedTo(3, 3));//0
+        
         //System.out.println(p.getKingRow()+"\n"+p.getKingCol());
         System.out.println(p.isCheckmate(board));//false
+        System.out.println(p2.isCheckmate(board));//(false)
+        board.remove(13,7);
         System.out.println(p2.isCheckmate(board));//true
         //System.out.println(p.getKingRow()+"\n"+p.getKingCol());
         for (int x=0; x<board.getBoard().length; x++){

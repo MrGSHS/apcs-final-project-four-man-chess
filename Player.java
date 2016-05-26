@@ -125,27 +125,31 @@ public class Player{
         }
         return null;
     }
-
+    /*
     public static Player getPreviousPlayer(String color){
         int num=getPlayer(color).playerNumber;
         if (num==0)
             return players.get(players.size()-1);
         return players.get(num-1);
     }
-
+    */
+    /*
     public static Player getPreviousPlayer(Player player){
         int num=player.playerNumber;
         if (num==0)
             return players.get(players.size()-1);
         return players.get(num-1);
     }
-
+    */
+   
+    /*
     public static Player getPreviousPlayer(int number){
         int num=getPlayer(number).playerNumber;
         if (num==0)
             return players.get(players.size()-1);
         return players.get(num);
     }    
+    */
 
     public static Player getNextPlayer(Player thePlayer){
         if (players.get(players.size()-1).getColor().equals(thePlayer.getColor())){
@@ -243,6 +247,7 @@ public class Player{
             remove(b);
             return true;
         }
+        /*
         if (!king.isInCheck(b, king, kingRow, kingCol, kingRow, kingCol)){
             return false;
         }
@@ -281,8 +286,8 @@ public class Player{
         //rotates kingLoc 3 times
 
         remove(b);
-
-        return true;
+        */
+        return false;
     }
     /*
     public Board takeBack(Board board, Piece p, int fromRow, int fromCol, int toRow, int toCol){
@@ -295,7 +300,7 @@ public class Player{
     return king.isInCheck(board, king, kingRow, kingCol);
     }
      */
-    public void remove(Board board){
+    private void remove(Board board){
         Piece piece;
         Player player;
         int ind=0;

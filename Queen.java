@@ -1,5 +1,6 @@
 /**
- * creates a queen piece that can move side to side, up and down, and diagonally
+ * Creates a queen piece that can move side to side, up and down, and diagonally
+ * unless a piece is in its way.
  */
 public class Queen extends Piece{
     public Queen(String c){

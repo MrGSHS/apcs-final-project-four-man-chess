@@ -1,6 +1,6 @@
 /**
- * creates a king piece that can move one square in any direction but cannot be
- * put in a place where it can be captured.
+ * creates a king piece that can move one square in any direction.
+ * (If the king is captured, the player loses)
  */
 public class King extends Piece{
     public King(String c){
@@ -30,7 +30,7 @@ public class King extends Piece{
         return "King  ";
     }
     
-    
+    /*
     public boolean isInCheck(Board board, Piece p, int fromRow, int fromCol,
     int row, int col){
         Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
@@ -60,6 +60,7 @@ public class King extends Piece{
         board.setSquare(fromRow, fromCol, p);
         return false;
     }
+    */
     
     
     /*public boolean isInCheck(Board board, String color){

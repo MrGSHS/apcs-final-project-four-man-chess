@@ -1,3 +1,6 @@
+/**
+ * tests if board(and pawn) rotate and rowCol methods work
+ */
 public class TestRotate{
     public static void main(String[] args){
         //Board b=new FourChessBoard();
@@ -11,6 +14,7 @@ public class TestRotate{
         
         Board board=new FourChessBoard();
         board.remove(1, 4);
+        board.setSquare(3,3, new Pawn("white"));
         //Piece p=board.getPiece(1, 5);
         Board b=board.rotate(board, 0);
         int[] arr=board.rowCol(board, 12, 4, 2);

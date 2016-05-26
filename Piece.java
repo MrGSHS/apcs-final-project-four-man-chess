@@ -1,7 +1,9 @@
 import java.util.*;
 /**
- * abstract class that can be any of the chess pieces so the board can hold different 
- * pieces
+ * abstract class that can be any of the chess pieces but not a generic piece 
+ * because a chess board only hold chess pieces, which are children of the 
+ * Piece class, so the board can hold all of the pieces, but the pieces still
+ * behave/move differently
  */
 public abstract class Piece{
     private String color;

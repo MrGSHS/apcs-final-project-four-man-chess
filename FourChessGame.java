@@ -4,6 +4,11 @@ import java.util.*;
  * there is one player remaining, the winner
  */
 public class FourChessGame{
+    /**
+     * asks user to input a move.  If invalid, the user to try again until he plays a legal move.  Then, 
+     * the new player makes his move.  All the players keep rotating until a player loses his king.  
+     * Then, the remaining players input moves until there's one player left.
+     */
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         String theMove;
@@ -97,6 +102,9 @@ public class FourChessGame{
         System.out.println("\n\n\nPlayer "+Player.getPlayer(0).getName()+" wins!");
     }
     
+    /**
+     * converts String input to an array of int moves to use to see if a move typed by the user is legal
+     */
     public static int[] numbers(String str){
         int[] nums=new int[4];
         int count=0;

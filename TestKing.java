@@ -1,3 +1,6 @@
+/**
+ * Tests if the king behaves correctly
+ */
 public class TestKing{
     public static void main(String[] args){
         Board board=new FourChessBoard();

@@ -1,5 +1,6 @@
 /**
- * creates a bishop, a piece that moves diagonally across a board
+ * creates a minor piece, a bishop, a piece that moves diagonally across a board
+ * unless another piece is in the way
  */
 public class Bishop extends Piece{
     public Bishop(String c){

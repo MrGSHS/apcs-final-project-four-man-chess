@@ -1,5 +1,6 @@
 /**
- * creates a rook, a piece that can move side to side and up and down
+ * creates a rook, a piece that can move side to side and up and down unless
+ * another piece is in its way.
  */
 public class Rook extends Piece{
     public Rook(String c){

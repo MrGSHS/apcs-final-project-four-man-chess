@@ -68,7 +68,9 @@ public class Board{
     }
     
     
-    
+    /**
+     * rotates board 90 degrees
+     */
     public Board rotate(Board board, int numClockwise){
         Board b=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
         Board temp=new Board(board.getRows(), board.getCols(), board.getTwoPlayers());
@@ -100,6 +102,9 @@ public class Board{
         return b;
     }
     
+    /**
+     * returns a location on the board after the board rotates 90 degrees
+     */
     public int[] rowCol(Board board, int row, int col, int rotations){
         int[] ret=new int[2];
         int x=0; 

@@ -1,3 +1,6 @@
+/**
+ * Tests if the Bishop works correctly
+ */
 public class TestBishop{
     public static void main(String[] args){
         Board board=new FourChessBoard();
