@@ -304,6 +304,7 @@ public class Player{
         Piece piece;
         Player player;
         int ind=0;
+        
         for (int x=0; x<board.getRows(); x++){
             for (int y=0; y<board.getCols(); y++){
                 piece=board.getPiece(x, y);
@@ -312,11 +313,13 @@ public class Player{
                 }
             }
         }
+        /*
         for (int x=0; x<players.size(); x++){
             if (players.get(x).getColor().equals(color)){
                 players.remove(x);
             }
         }
         playerNumber--;
+        */
     }
 }

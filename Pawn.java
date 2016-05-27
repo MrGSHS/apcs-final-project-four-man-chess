@@ -220,22 +220,24 @@ public class Pawn extends Piece{
             super.doMove(board, p, fromRow, fromCol, toRow, toCol);
     }
     
-    /*
+    
     public boolean promote(Board board, Piece p, int fromRow, int fromCol,
     int toRow, int toCol){
         if ((p.move(board, p, fromRow, fromCol, toRow, toCol))
         && (toRow==0 || toRow==board.getRows()-1 || toCol==0
-        || toCol==board.getCols()-1)){
+        || toCol==board.getCols()-1))
+        
+        //|| p.move(board, p, fromRow, fromCol, toRow, toCol)
+        //&& (toRow==0 || toRow==board.getRows()-1 || toCol==0
+        //|| toCol==board.getCols()-1){
             return true;
             //board.setSquare(fromRow, fromCol, null);
             //board.setSquare(toRow, toCol, newPiece);
             //Player.getPlayer(p.getColor()).addMove(fromRow, fromCol, toRow, toCol);
-        }
-        
-        else
-            return false;
+        //}
+        return false;
     }
-    */
+    
     
     public String toString(){
         return "Pawn  ";

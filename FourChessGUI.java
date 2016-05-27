@@ -19,6 +19,8 @@ public class FourChessGUI extends Applet implements MouseListener{
     private int count=0, xPos, yPos;
     private Piece piece=null;
 
+    private boolean promote=false;
+    
     private Font myFont=new Font("TimesRoman", 1, 20);
 
     private Board board=new FourChessBoard();   
@@ -113,7 +115,26 @@ public class FourChessGUI extends Applet implements MouseListener{
         }
 
         g.setColor(Color.green);
-        g.fillOval(xPos/50*50, yPos/50*50, 20, 20);        
+        g.fillOval(xPos/50*50, yPos/50*50, 20, 20);
+        int ctr=0;
+        
+        for (int x=0; x<Player.getNumPlayers(); x++){
+            if (temp.isCheckmate(board)){}
+            else
+                ctr++;
+            temp=Player.getNextPlayer(temp);
+        }     
+        
+        if (ctr==1){
+            g.setColor(Color.green);
+            g.drawString(turn.getColor()+" wins!", 0,100);    
+        }
+        else{
+            g.setColor(Color.green);
+            g.drawString(turn.getColor()+"'s turn", 0, 100);
+        }         
+        
+        /*
         if (numPlayers==1){
             g.setColor(Color.green);
             g.drawString(turn.getColor()
@@ -123,8 +144,15 @@ public class FourChessGUI extends Applet implements MouseListener{
             g.setColor(Color.green);
             g.drawString(turn.getColor()+"'s turn", 0, 100);
         }
+        */
         //g.fillRect(0, 0, 150, 150);
-
+        if (promote){
+            g.setColor(Color.green);
+            g.drawOval(0, 0, 100, 100);
+            /*
+             * 
+             */
+        }
     }   
 
     public void drawBishop(int x, int y, int w, int h, Graphics g){
@@ -179,7 +207,9 @@ public class FourChessGUI extends Applet implements MouseListener{
         xPos=me.getX();//from realapplets.com
         yPos=me.getY();//
 
+        //check promote==true first
         if (count==0){
+            promote=false;
             c=turn.getColor();
             fromRow=xPos/50;
             fromCol=yPos/50;
@@ -194,25 +224,28 @@ public class FourChessGUI extends Applet implements MouseListener{
 
             if (!piece.getColor().equals(turn.getColor())){}
             else if (piece.move(board, piece, fromRow, fromCol, toRow, toCol)){
+                if (piece.promote(board, piece, fromRow, fromCol, toRow, toCol)){
+                    promote=true;
+                }                
                 piece.doMove(board, piece, fromRow, fromCol, toRow, toCol);
+                
                 turn=Player.getNextPlayer(turn);
                 //temp=turn.getNextPlayer(turn);
                 
-                if (turn.isCheckmate(board)){
+                while (turn.isCheckmate(board)){
                     //turn=turn.getNextPlayer(turn);
-                    turn=Player.getPlayer(c);
+                    //turn=Player.getPlayer(c);
                     turn=turn.getNextPlayer(turn);
                     //turn=temp;
-                }
-                
+                }           
                 numPlayers=Player.getNumPlayers();
-
             }
             count=0;
             fromRow=0;
             toRow=0;
 
         }
+        repaint();
         repaint();
     }
 
